@@ -142,12 +142,14 @@ class _CalendarState extends State<AnimatedHorizontalCalendar> {
                     ),
                     margin: EdgeInsets.only(left: 8,right: 8, top: 8),
                     // ignore: deprecated_member_use
-                    child: FlatButton(
-                      padding: EdgeInsets.symmetric(horizontal: 2.0),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 2.0)),
                       onPressed: () {
                         widget.onDateSelected!(Utils.getDate(_date!));
                         setState(() {
-                          selectedCalenderDate = _startDate?.add(Duration(days: index));
+                          selectedCalenderDate =
+                              _startDate?.add(Duration(days: index));
                           _startDate = _startDate?.add(Duration(days: index));
                         });
                       },
@@ -161,8 +163,8 @@ class _CalendarState extends State<AnimatedHorizontalCalendar> {
                                     ? widget.colorOfWeek ?? secondaryTextColor
                                     : Colors.white,
                                 fontSize: widget.fontSizeOfWeek ?? 12.0,
-                                fontWeight: widget.fontWeightWeek ?? FontWeight.w600
-                            ),
+                                fontWeight:
+                                    widget.fontWeightWeek ?? FontWeight.w600),
                           ),
                           SizedBox(height: 2.0),
                           Text(
@@ -172,7 +174,8 @@ class _CalendarState extends State<AnimatedHorizontalCalendar> {
                                   ? widget.colorOfMonth ?? primaryTextColor
                                   : Colors.white,
                               fontSize: widget.fontSizeOfMonth ?? 20.0,
-                              fontWeight: widget.fontWeightMonth ?? FontWeight.w700,
+                              fontWeight:
+                                  widget.fontWeightMonth ?? FontWeight.w700,
                             ),
                           ),
                         ],
